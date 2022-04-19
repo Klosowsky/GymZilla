@@ -6,23 +6,19 @@ public class Workout {
     private String workoutName;
     private int workoutId;
 
-
-    public Workout(String workoutName){
+    public Workout(int workoutId, String workoutName){
         this.workoutName=workoutName;
+        this.workoutId=workoutId;
     }
+
     public String getWorkoutName(){
         return workoutName;
     }
 
-    private static int lastContactId = 0;
+    public static ArrayList<Workout> createContactsList() {
+        ArrayList<Workout> workouts = new ArrayList<Workout>();
 
-    public static ArrayList<Workout> createContactsList(int numContacts) {
-        ArrayList<Workout> contacts = new ArrayList<Workout>();
 
-        for (int i = 1; i <= numContacts; i++) {
-            contacts.add(new Workout("Person " + ++lastContactId));
-        }
-
-        return contacts;
+        return workouts;
     }
 }
