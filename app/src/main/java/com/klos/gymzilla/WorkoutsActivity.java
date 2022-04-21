@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.klos.gymzilla.adapter.WorkoutAdapter;
 import com.klos.gymzilla.model.Workout;
@@ -27,6 +29,14 @@ public class WorkoutsActivity extends AppCompatActivity {
         WorkoutAdapter adapter = new WorkoutAdapter(workoutList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void editWorkout(View v){
+
+        Intent intent = new Intent(this,WorkoutEditor.class);
+        startActivity(intent);
+        System.out.println(WorkoutAdapter.buttonControler);
+
     }
 
 }

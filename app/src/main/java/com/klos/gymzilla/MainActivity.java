@@ -18,16 +18,17 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-    Connection connect = null;
+    static public Connection connect = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void goToWorkoutSec(View view){
-        Intent intent = new Intent(this,WorkoutsActivity.class);
+        Intent intent = new Intent(MainActivity.this,WorkoutsActivity.class);
         startActivity(intent);
     }
 
