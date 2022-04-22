@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 Statement statement = connect.createStatement();
                 ResultSet rs = statement.executeQuery(sqlQuery);
                 while(rs.next()) {
-                    txt.setText(rs.getString(1));
+                    txt.setText(rs.getString("name"));
                 }
             } else {
                 txt.setText("Connection error1");

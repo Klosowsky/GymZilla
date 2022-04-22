@@ -34,6 +34,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull WorkoutAdapter.ViewHolder holder, int position) {
         Workout workout = workouts.get(position);
         TextView nameTV = holder.nameTextView;
+
         nameTV.setText(workout.getWorkoutName());
         TextView dateTV = holder.dateTextView;
         dateTV.setText(workout.getWorkoutDate().toString());
@@ -43,6 +44,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
             public void onClick(View view) {
                 System.out.println(workout.getWorkoutId());
                 Intent intent = new Intent(view.getContext(), WorkoutEditor.class);
+                intent.putExtra("idValue",workout.getWorkoutId());
                 view.getContext().startActivity(intent);
 
             }
