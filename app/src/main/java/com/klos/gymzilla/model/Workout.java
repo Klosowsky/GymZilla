@@ -45,7 +45,7 @@ public class Workout {
                 Statement statement = MainActivity.connect.createStatement();
                 ResultSet rs = statement.executeQuery(sqlQuery);
                 while(rs.next()) {
-                   workouts.add(new Workout(rs.getInt(1), rs.getString(2), rs.getDate(3)));
+                   workouts.add(new Workout(rs.getInt("workout_id"), rs.getString("workout_name"), rs.getDate("workout_date")));
                 }
 
             } else {
